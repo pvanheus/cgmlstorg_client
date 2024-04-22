@@ -20,7 +20,7 @@ try:
     __version__ = importlib_metadata.version(__package__)  # type: ignore
 except Exception:  # pragma: no cover
     # package is not installed
-    __version__ = "0.0.0"
+    __version__ = "0.1.0"
 
 
 # NB: command line access is located in about.py
@@ -35,7 +35,7 @@ def about(file: typing.Optional[typing.TextIO] = None) -> None:
     metadata = importlib_metadata.metadata(__package__)  # type: ignore
     print(f"# {metadata['Name']}", file=file)
     print(f"{metadata['Summary']}", file=file)
-    print(f"{metadata['Home-page']}", file=file)
+    print(f"{metadata['Homepage']}", file=file)
 
     name_width = 24
     versions = {}

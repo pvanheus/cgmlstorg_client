@@ -12,9 +12,11 @@ requires = ["setuptools>=67.0", "setuptools_scm[toml]>=7.1"]
 name = "cgmlstorg_client"
 dynamic = ["version"]
 dependencies = [
-    "numpy",
+    "requests",
+    "click",
+    "importlib-metadata",
 ]
-requires-python =">=3.9"
+requires-python =">=3.10"
 
 authors = [
   {name = "Peter van Heusden", email = "pvanheusden@uwc.ac.za"},
@@ -28,21 +30,10 @@ readme = "README.md"
 license = {file = "LICENSE"}
 keywords = []
 classifiers = [ 
-  # Full List: https://pypi.org/classifiers/
-  
-  # How mature is this project? Common values are
-  #   3 - Alpha
-  #   4 - Beta
-  #   5 - Production/Stable
   "Development Status :: 4 - Beta",
-
-  # Indicate who your project is intended for
-  "Intended Audience :: Developers",
-  "Topic :: Software Development :: Build Tools",
-
-  # Pick your license as you wish (see also "license" above)
-  # "License :: OSI Approved :: MIT License",
-  # "License :: OSI Approved :: Apache Software License",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
+  "License :: OSI Approved :: MIT License",
 ]
 
 [project.urls]
@@ -52,6 +43,9 @@ Homepage = "https://github.com/pvanheus/cgmlstorg_client/"
 # Issues = "https://github.com/me/spam/issues"
 # Changelog = "https://github.com/me/spam/blob/master/CHANGELOG.md"
 
+
+[project.scripts]
+cgmlstorg_client = "cgmlstorg_client.cli:cli"
 
 [project.optional-dependencies]
 dev = [
@@ -70,11 +64,11 @@ packages = ["cgmlstorg_client"]
 
 
 [tool.setuptools_scm]
-fallback_version = "0.0.0-dev"
+fallback_version = "0.1.0"
 # write_to = "cgmlstorg_client/_version.py"
 
 
-[tools.ruff]
+[tool.ruff]
 # https://docs.astral.sh/ruff/configuration/
 line-length = 88
 indent-width = 4
@@ -120,7 +114,7 @@ exclude_lines = [
 files = "cgmlstorg_client"
 
 # Suppresses error about unresolved imports (i.e. from numpy)
-gnore_missing_imports = true
+ignore_missing_imports = true
 
 # Disallows functions without type annotations#
 disallow_untyped_defs = true

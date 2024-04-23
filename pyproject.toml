@@ -44,7 +44,9 @@ cgmlstorg_client = "cgmlstorg_client.cli:cli"
 [project.optional-dependencies]
 dev = [
     "setuptools_scm",
+    "pre-commit",
     "pytest",
+    "pytest-cov",
     "mypy",
     "ruff",
 ]

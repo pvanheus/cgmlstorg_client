@@ -12,23 +12,22 @@ requires = ["setuptools>=67.0", "setuptools_scm[toml]>=7.1"]
 name = "cgmlstorg_client"
 dynamic = ["version"]
 dependencies = [
-    "requests",
+    "biopython",
     "click",
-    "importlib-metadata",
+    "httpx",
+    "tqdm"
 ]
 requires-python =">=3.10"
 
 authors = [
   {name = "Peter van Heusden", email = "pvanheusden@uwc.ac.za"},
-  # {name = "Another person"}, {email = "different.person@example.com"},
 ]
-maintainers = [
-  # {name = "Another person"}, {email = "different.person@example.com"},
-]
+
+
 description = "A client to list and download schemes from cgMLST.org"
 readme = "README.md"
 license = {file = "LICENSE"}
-keywords = []
+keywords = ['bioinformatics', 'cgmlst']
 classifiers = [ 
   "Development Status :: 4 - Beta",
   "Intended Audience :: Science/Research",
@@ -38,11 +37,6 @@ classifiers = [
 
 [project.urls]
 Homepage = "https://github.com/pvanheus/cgmlstorg_client/"
-# Documentation = "https://readthedocs.org"
-# Repository = "https://github.com/me/spam.git"
-# Issues = "https://github.com/me/spam/issues"
-# Changelog = "https://github.com/me/spam/blob/master/CHANGELOG.md"
-
 
 [project.scripts]
 cgmlstorg_client = "cgmlstorg_client.cli:cli"
@@ -51,10 +45,7 @@ cgmlstorg_client = "cgmlstorg_client.cli:cli"
 dev = [
     "setuptools_scm",
     "pytest",
-    "pytest-cov",
     "mypy",
-    "sphinx",
-    "pre-commit",
     "ruff",
 ]
 
@@ -110,7 +101,7 @@ exclude_lines = [
 # mypy typecheck configuration
 # https://mypy.readthedocs.io/en/stable/config_file.html
 
-# [tools.mypy]
+[tool.mypy]
 files = "cgmlstorg_client"
 
 # Suppresses error about unresolved imports (i.e. from numpy)

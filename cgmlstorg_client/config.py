@@ -1,4 +1,4 @@
-# Copyright 2024, Peter van Heusden
+# Copyright 2024, Peter van Heusden <pvanheusden@uwc.ac.za>
 #
 # This source code is licensed under the MIT License
 # found in the LICENSE file in the root directory of this source tree.
@@ -35,7 +35,7 @@ def about(file: typing.Optional[typing.TextIO] = None) -> None:
     metadata = importlib_metadata.metadata(__package__)  # type: ignore
     print(f"# {metadata['Name']}", file=file)
     print(f"{metadata['Summary']}", file=file)
-    print(f"{metadata['Homepage']}", file=file)
+    print(f"{metadata['Project-URL']}", file=file)
 
     name_width = 24
     versions = {}
@@ -58,4 +58,3 @@ def about(file: typing.Optional[typing.TextIO] = None) -> None:
 
 
 # end about
-

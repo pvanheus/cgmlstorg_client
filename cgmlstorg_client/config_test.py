@@ -1,4 +1,4 @@
-# Copyright 2024, Peter van Heusden
+# Copyright 2024, Peter van Heusden <pvanheusden@uwc.ac.za>
 #
 # This source code is licensed under the MIT License
 # found in the LICENSE file in the root directory of this source tree.
@@ -36,3 +36,6 @@ def test_about() -> None:
 def test_about_main() -> None:
     rval = subprocess.call(["python", "-m", "cgmlstorg_client.about"])
     assert rval == 0
+
+if __name__ == '__main__':
+    test_copyright()
